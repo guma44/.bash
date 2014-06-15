@@ -11,7 +11,9 @@ cd $HOME
 git clone https://guma44@bitbucket.org/guma44/.bash.git
 
 ln -s .bash/bashrc .bashrc
+
 ln -s .bash/bash\_profile .bash\_profile
+
 touch .bashrc.local
 
 # If you have some local (like paths or aliases) configs put them into .bashrc.local #
