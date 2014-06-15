@@ -14,6 +14,8 @@ ln -s .bash/bashrc .bashrc
 
 ln -s .bash/bash\_profile .bash\_profile
 
+ln -s .bash/bash\_logout .bash\_logout
+
 touch .bashrc.local
 
 # If you have some local (like paths or aliases) configs put them into .bashrc.local #
