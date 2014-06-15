@@ -1,0 +1,16 @@
+export EDITOR="vim"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
+export MANPAGER="less -X"
+export HISTIGNORE="&:ls:ls *:cd:cd -:pwd:exit:date:* --help:* -h:* --hard HEAD"
+export HISTCONTROL="ignoredups"
+export HISTSIZE=100000                     # custom history size
+export HISTFILESIZE=100000                 # custom history file size
+shopt -s histappend
+shopt -s checkwinsize
+
+# case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+#Keep multiline commands as one command in history
+shopt -s cmdhist

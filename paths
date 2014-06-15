@@ -1,0 +1,4 @@
+# export LD_LIBRARY_PATH=/import/bc2/apps/R/3.0.2-goolf-1.4.10-bare/lib64/R/lib/:$LD_LIBRARY_PATH */
+# export DRMAA_LIBRARY_PATH=/import/bc2/soft/system/UGE/current/lib/lx-amd64/libdrmaa.so */
+# export PYTHONPATH=/import/bc2/home/zavolan/gumiennr/LibPython_Centos6:$PYTHONPATH */
+# export PATH=/import/bc2/home/zavolan/gumiennr/.local/bin:$PATH */

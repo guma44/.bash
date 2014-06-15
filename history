@@ -1,0 +1,59 @@
+## Per-directory Bash history (w/o aliasing cd)
+
+# I use Bash’s [PROMPT_COMMAND variable](http://www.gnu.org/software/bash/manual/bashref.html#Controlling-the-Prompt):
+
+# > The value of the variable PROMPT_COMMAND is examined just before Bash prints each primary prompt. If PROMPT_COMMAND is set and has a non-null value, then the value is executed just as if it had been typed on the command line.
+
+# The source code should be pretty straight forward, but if not, please ask in the comments. Put this in your .bashrc or similar:
+
+# per-directory Bash history
+function check_for_local_history {
+  local last_command=$(history 1)
+  local last_command=${last_command:7} # this depends on HISTTIMEFORMAT
+  # echo "Last command: $last_command"
+
+  function main {
+    if changing_directory; then
+      if found_local_history_file; then
+		# echo "I have history file"
+        use_history_file $PWD/.bash_history
+      else
+		echo "I do not have history file. I set up one now."
+	    touch $PWD/.bash_history
+        use_history_file $PWD/.bash_history
+      fi
+    fi
+  }
+
+  function changing_directory {
+    is_cd_nothing || is_cd_something || is_a_cd_alias
+  }
+
+  function is_cd_nothing {
+    [ ${#last_command} -eq 2 -a "${last_command:0:2}" = "cd" ]
+  }
+
+  function is_cd_something {
+    [ ${#last_command} -gt 2 -a "${last_command:0:3}" = "cd " ]
+  }
+
+  function is_a_cd_alias {
+    local cd_aliases=`alias | grep "='cd " | grep -P -o '[a-z]+(?==)'`
+    echo $cd_aliases | grep -q "\<$last_command\>"
+  }
+
+  function found_local_history_file {
+    [ -e .bash_history ]
+  }
+
+  function use_history_file {
+    history -w
+    history -c
+    export HISTFILE=$1
+    history -r
+  }
+
+  main
+}
+
+PROMPT_COMMAND="check_for_local_history"
