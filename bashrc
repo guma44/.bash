@@ -8,7 +8,6 @@ fi
 
 # load source files in ~/.bash
 for file in ~/.bash/{functions,aliases,completions,config,paths,prompt,history}; do
-	echo "Sourcing $file"
     [ -r "$file" ] && source "$file"
 done
 unset file
