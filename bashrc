@@ -1,3 +1,7 @@
+if [ -f /etc/bashrc ]; then
+      . /etc/bashrc
+fi
+
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
@@ -11,4 +15,3 @@ for file in ~/.bash/{functions,aliases,completions,config,paths,prompt,history};
     [ -r "$file" ] && source "$file"
 done
 unset file
-
