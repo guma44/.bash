@@ -101,3 +101,17 @@ git add bashrc
 git commit -m "Removed print source from bashrc"
 git push origin master
 cd Pipelines/
+git status
+vim bashrc 
+git add .
+git status
+git commit -m "Added default bashrc from system"
+git push origin master
+cd ..
+git status
+tail .bash_history 
+cd ~
+vim bashrc 
+vim paths 
+vim config 
+cd ..

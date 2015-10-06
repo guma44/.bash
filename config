@@ -14,3 +14,8 @@ shopt -s nocaseglob
 
 #Keep multiline commands as one command in history
 shopt -s cmdhist
+
+# make ls colors nicer for certain files
+LS_COLORS="$LS_COLORS:*.fa=01;33:*.ipynb=01;37:*.tab=92:*.bed=91:"
+export LS_COLORS
+
