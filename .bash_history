@@ -115,3 +115,13 @@ vim bashrc
 vim paths 
 vim config 
 cd ..
+git status
+vim functions 
+vim bashrc 
+vim config 
+grep LS_COL *
+grep -r LS_COL *
+vim config 
+git commit -am "ls colors, mkdirtar funcion"
+git push
+cd ..
