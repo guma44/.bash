@@ -1,3 +1,17 @@
 source ~/.bash/completion_scripts/c
 source ~/.bash/completion_scripts/general
 source ~/.bash/completion_scripts/git_completion
+source ~/.bash/completion_scripts/tmux
+source ~/.bash/completion_scripts/django
+source ~/.bash/completion_scripts/docker-compose
+source ~/.bash/completion_scripts/docker
+source ~/.bash/completion_scripts/npm
+source ~/.bash/completion_scripts/pip
+source ~/.bash/completion_scripts/pip3
+source ~/.bash/completion_scripts/ng
+source ~/.bash/completion_scripts/vagrant
+source ~/.bash/completion_scripts/ssh
+source ~/.bash/completion_scripts/git-flow
+source ~/.bash/completion_scripts/makefile
+
+
