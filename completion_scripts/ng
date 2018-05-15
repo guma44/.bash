@@ -1,1 +1,1 @@
-. <(ng completion --bash)
+command -v ng && . <(ng completion --bash)
