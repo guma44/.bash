@@ -88,4 +88,4 @@ function get_branch(){
     [ -d .git  ] || git rev-parse --git-dir > /dev/null 2>&1 && echo " on "
 }
 
-PS1="\[$BRed\]\u\[$BBlue\]@\[$BGreen\]\h \[$BWhite\]\[$BYellow\]\w\[$BCyan\]\$(get_branch)\[$PURPLE\]\$(parse_git_svn_revision)\[$BWhite\]\n\$ \[$RESET\]"
+PS1="\[$BRed\]\u\[$BBlue\]@\[$BGreen\]\h \[$Green\](\j) \[$BWhite\]\[$BYellow\]\w\[$BCyan\]\$(get_branch)\[$PURPLE\]\$(parse_git_svn_revision)\[$BWhite\]\n\$ \[$RESET\]"
